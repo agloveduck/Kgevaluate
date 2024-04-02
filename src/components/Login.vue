@@ -2,7 +2,7 @@
     <div>
         <!-- <el-button :plain="true" @click="open4">错误</el-button> -->
         <div class="intro-container">
-  <h2 class="intro-title"> Welcome To Academic Online</h2>
+  <h2 class="intro-title"> 图谱质量评估系统</h2>
   <p class="intro-content"><span class="intro-quote">“</span>我们的目标是为研究人员和学生提供一个高效、简便、可靠的学术资源管理工具。我们的系统支持多种类型的资源上传和存储，同时也提供了专业的评阅和管理功能，帮助用户更好地管理和利用自己的学术资源。我们的系统操作简单，界面友好，用户可以快速上手。无论您是研究生、教师还是学术管理者，我们都相信，我们的学术资源管理系统都能为您带来便捷和高效。<span class="intro-quote">“</span></p>
        </div>
         <div class="login-wrap">
