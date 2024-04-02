@@ -3,7 +3,7 @@
         <!-- <el-button :plain="true" @click="open4">错误</el-button> -->
         <div class="intro-container">
   <h2 class="intro-title"> 图谱质量评估系统</h2>
-  <p class="intro-content"><span class="intro-quote">“</span>我们的目标是为研究人员和学生提供一个高效、简便、可靠的学术资源管理工具。我们的系统支持多种类型的资源上传和存储，同时也提供了专业的评阅和管理功能，帮助用户更好地管理和利用自己的学术资源。我们的系统操作简单，界面友好，用户可以快速上手。无论您是研究生、教师还是学术管理者，我们都相信，我们的学术资源管理系统都能为您带来便捷和高效。<span class="intro-quote">“</span></p>
+  <p class="intro-content"><span class="intro-quote">“</span>我们的图谱质量评估系统旨在为用户提供一个可靠的平台，帮助他们评估、改进和维护他们的知识图谱数据的质量。作为一个基于上传实体关系三元组文件的平台，我们提供了一个简单易用的界面，让用户能够轻松地上传他们的数据，并且经过专家审核后进行修改或删除。这一审核过程确保了图谱数据的准确性和可信度。<span class="intro-quote">“</span></p>
        </div>
         <div class="login-wrap">
       <el-form  v-if="showLoginPanel" class="login-container">
@@ -167,16 +167,15 @@ export default { // es6语法 暴露组件对象
 }
 
 .login-wrap {
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
+    background-image: url('../assets/bk.jpeg'); /* Change the path to your image */
     background-repeat: no-repeat;
-    background-position: center right;
-    background-size: 100%;
+    background-position: center;
+    background-size: cover; /* Ensure the background image covers the entire screen */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 70vh; /* Set the height to 100% of the viewport height */
 }
 
 .login-container {
