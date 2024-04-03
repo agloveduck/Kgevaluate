@@ -4,11 +4,11 @@
       {{ name }}
     </div>
     <div class="time">{{ time }}</div>
-    <div class="content1">优点:{{ merit }}</div>
-    <div class="content2"> 格式问题:{{ defect_format }} </div>
-    <div class="content3"> 内容问题:{{  defect_content}}</div>
-    <div class="content4"> 语言问题:{{ defect_language }}</div>
-    <div class="content5"> 创新性问题:{{ defect_innovative }}</div>
+    <div class="content1">准确性:{{ merit }}</div>
+    <div class="content2"> 一致性:{{ defect_format }} </div>
+    <div class="content3"> 完整性:{{  defect_content}}</div>
+    <div class="content4"> 简洁性:{{ defect_language }}</div>
+    <div class="content5"> 时效性:{{ defect_innovative }}</div>
     <div class="content6"> 评阅结果: {{ result }}
     </div>
     <!-- <div class="time">{{ time }}</div> -->

@@ -1,7 +1,7 @@
 <template>
     <div class="body">
         <div class="search">
-            <h2 class="search_left">我的评阅</h2>
+            <h2 class="search_left">我的审核</h2>
             <div class="Home">
               <el-link icon="el-icon-s-home"  href="#/home" >主页</el-link>
               <el-link type="danger" :underline="false" @click="havent_review">未审阅</el-link>

@@ -2,21 +2,25 @@
     <div class="resource">
         <el-tabs type="border-card" class="con1">
           <el-tab-pane label="资源名称"> <h3>{{name}} Version:{{ version }}</h3>
-            <h4>作者:{{authors}}</h4>
+            <h4>上传者:{{authors}}</h4>
             <!-- <h3 class="pass" v-if="version>='1.0'">已审阅通过</h3> -->
             <h3 class="pass">{{review_status}}</h3>
         </el-tab-pane>
-           <el-tab-pane label="资源摘要">{{abstract}}</el-tab-pane>
+           <el-tab-pane label="资源简介">{{abstract}}</el-tab-pane>
            <el-tab-pane label="资源详情">
             <Showpdf :academic_id=academic_id :flag=0 :filename=name></Showpdf>
            </el-tab-pane>
+             <!-- New tab pane for displaying an image -->
+             <el-tab-pane label="资源查看">
+                <img src="../assets/triples.png" alt="Resource Image" style="width: 100%; height: auto;">
+            </el-tab-pane>
        </el-tabs>
         <div class="con">
           <h2>{{ title }} {{ subtitle }}</h2>
             <div class="links">
               <el-link v-if="user_role==='超级管理员'" type="primary" @click="showConfirm = true">通过</el-link>
               <!-- <el-link type="primary" @click="goToComments(academic_id)">评阅</el-link> -->
-              <el-link type="primary" @click="goToComments2(academic_id,0)">评阅模板</el-link>
+              <el-link type="primary" @click="goToComments2(academic_id,0)">评阅标准</el-link>
             </div>
             <h3 class="time">创建时间:{{ create_time }}</h3>
         </div>
@@ -87,7 +91,7 @@ export default {
 }
 .resource{
     border: 2px solid #409EFF;
-    width: 800px;
+    width: 900px;
     height: 320px;
     margin:30px 0;
     display: flex;
@@ -105,7 +109,7 @@ export default {
 .con{
     /* border: 1px solid rgb(224, 200, 232); */
     display: flex;
-    width: 200px;
+    width: 280px;
     height: 320px;
      /*实现垂直居中*/
     align-items: center;

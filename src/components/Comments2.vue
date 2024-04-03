@@ -6,7 +6,7 @@
             <div class="Home">
               <el-link icon="el-icon-back"  @click="goBack">返回</el-link>
               <i v-if="flag==0" class="el-icon-edit"></i>
-              <el-link v-if="flag==0" @click="dialogFormVisible = true">评阅模板</el-link>
+              <el-link v-if="flag==0" @click="dialogFormVisible = true">评阅标准</el-link>
             </div>
             <div class="search_main">
                 <div>
@@ -15,22 +15,22 @@
             <Ava></Ava>
         </div>
         <div class="main">
-          <el-dialog title="评阅模板" :visible.sync="dialogFormVisible">
+          <el-dialog title="评阅标准" :visible.sync="dialogFormVisible">
             <el-form :model="form" ref="form">
-                     <el-form-item label="优点">
-                       <el-input  type="textarea" :rows="2" v-model="form.merit" autocomplete="off" placeholder="请输入您认为这篇文章的优点"> </el-input>
+                     <el-form-item label="准确性">
+                       <el-input  type="textarea" :rows="2" v-model="form.merit" autocomplete="off" placeholder="当评估知识图谱的准确性时，需要计算上传的三元组数据中正确的数量。这个指标可以帮助确定知识图谱中信息的准确程度，从而确保其知识的可靠性。"> </el-input>
                      </el-form-item>
-                     <el-form-item label="文章格式问题">
-                       <el-input  type="textarea" :rows="2" v-model="form.defect_format" autocomplete="off" placeholder="请输入您认为这篇文章的格式问题(如篇幅字数、图表格式、排版格式、参考文献引用格式、论文结构完整性）"> </el-input>
+                     <el-form-item label="一致性">
+                       <el-input  type="textarea" :rows="2" v-model="form.defect_format" autocomplete="off" placeholder="评估知识图谱内部在逻辑上是否存在矛盾的内容。可以细分为语义一致性和结构一致性两个方面。"> </el-input>
                      </el-form-item>
-                     <el-form-item label="文章内容问题">
-                        <el-input  type="textarea" :rows="2" v-model="form.defect_content" autocomplete="off" placeholder="请输入您认为这篇文章的内容问题(如包括摘要、原理、方法、公式、数据、解释、结论等方面）"> </el-input>
+                     <el-form-item label="完整性">
+                        <el-input  type="textarea" :rows="2" v-model="form.defect_content" autocomplete="off" placeholder="评估知识图谱对目标领域的覆盖程度，需要考虑到知识图谱所涵盖的领域特定性以及目标知识的范围。"> </el-input>
                      </el-form-item>
-                     <el-form-item label="文章语言问题">
-                        <el-input  type="textarea" :rows="2" v-model="form.defect_language" autocomplete="off" placeholder="请输入您认为这篇文章的语言问题(如语法、标点符号、句子结构、用词不当等错误）"> </el-input>
+                     <el-form-item label="简洁性">
+                        <el-input  type="textarea" :rows="2" v-model="form.defect_language" autocomplete="off" placeholder="评估知识图谱中的信息表示是否简洁清晰，不冗余不重复。简洁性的提高有助于增强知识图谱的可读性和可维护性。"> </el-input>
                      </el-form-item>
-                     <el-form-item label="文章创新性问题">
-                        <el-input  type="textarea" :rows="2" v-model="form.defect_innovative" autocomplete="off" placeholder="请输入您认为这篇文章的创新性问题(如有创新性建议）"> </el-input>
+                     <el-form-item label="时效性">
+                        <el-input  type="textarea" :rows="2" v-model="form.defect_innovative" autocomplete="off" placeholder="评估知识图谱中知识更新及时且具有时效声明的程度。指标包括知识的更新程度以及是否具有时效声明，以确保知识图谱中的信息始终保持最新和有效。"> </el-input>
                      </el-form-item>
                      <el-form-item label="评阅结果">
                         <el-radio-group v-model="form.result">
@@ -63,7 +63,7 @@ export default {
   data () {
     return {
       flag: 1,
-      title: '资源评阅模板页',
+      title: '资源评阅标准',
       user_id: JSON.parse(sessionStorage.getItem('userinfo'))['_id'],
       username: JSON.parse(sessionStorage.getItem('userinfo'))['user_name'],
       comments: [],
@@ -195,7 +195,7 @@ export default {
     justify-content: flex-start;
     align-items: center;
     overflow: scroll;
-    height:100%;
+    height:80%;
 }
 
 .leftBar {
