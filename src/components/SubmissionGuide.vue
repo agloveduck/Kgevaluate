@@ -2,7 +2,7 @@
     <div>
         <!-- <h2 class="search_left">投稿指南</h2> -->
         <div class="search">
-            <h2 class="search_left">投稿指南</h2>
+            <h2 class="search_left">审核指南</h2>
             <div class="Home">
               <el-link icon="el-icon-s-home"  href="#/home" >主页</el-link>
             </div>

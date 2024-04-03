@@ -1,13 +1,13 @@
 <template>
     <div>
-      <el-button type="text" @click="dialogFormVisible = true">添加大类别</el-button>
+      <el-button type="text" @click="dialogFormVisible = true">添加疾病分类</el-button>
 
-<el-dialog title="大类别信息" :visible.sync="dialogFormVisible">
+<el-dialog title="疾病分类信息" :visible.sync="dialogFormVisible">
   <el-form :model="form" ref="form">
-    <el-form-item label="大类别名称">
+    <el-form-item label="疾病分类名称">
       <el-input v-model="form.name" autocomplete="off" prop="name"> </el-input>
     </el-form-item>
-    <el-form-item label="大类别描述">
+    <el-form-item label="疾病分类描述">
       <el-input type="textarea" v-model="form.desc" prop="desc"></el-input>
    </el-form-item >
    <el-form-item label="是否私有" prop="isprivate"  v-show="show_private">

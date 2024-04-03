@@ -4,10 +4,10 @@
         <div class="search">
             <h2 class="search_left">我的资源</h2>
             <div class="others" style="white-space: nowrap;">
-              <el-link icon="el-icon-reading" href="#/ElectronicJournalCenter"  v-show="isShow" >杂志管理中心</el-link>
-              <el-link icon="el-icon-message" href="#/Review" >我的评阅</el-link>
-              <el-link icon="el-icon-position" href="#/SubmissionGuide">投稿指南</el-link>
-              <el-link icon="el-icon-notebook-1"  href="#/Template" >模板库</el-link>
+              <el-link icon="el-icon-reading" href="#/ElectronicJournalCenter"  v-show="isShow" >资源管理中心</el-link>
+              <el-link icon="el-icon-message" href="#/Review" >我的审核</el-link>
+              <el-link icon="el-icon-position" href="#/SubmissionGuide">审核指南</el-link>
+              <!-- <el-link icon="el-icon-notebook-1"  href="#/Template" >模板库</el-link> -->
               <!-- <el-link icon="el-icon-edit"  href="#/Editor" >在线编辑</el-link> -->
               <div class="addbtn">
                 <Addresource :categories="categories" :privateflag="privateflag"></Addresource>

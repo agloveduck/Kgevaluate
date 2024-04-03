@@ -1,9 +1,9 @@
 <template>
     <div>
-      <el-button type="text" @click="dialogFormVisible = true">添加小类别</el-button>
-<el-dialog title="小类别信息" :visible.sync="dialogFormVisible">
+      <el-button type="text" @click="dialogFormVisible = true">添加具体疾病类别</el-button>
+<el-dialog title="具体疾病类别" :visible.sync="dialogFormVisible">
   <el-form :model="form" ref="form" size="mini">
-    <el-form-item label="所属大类别类别">
+    <el-form-item label="所属疾病分类类别">
       <!-- <el-input v-model="form.category_id" autocomplete="off" prop="category_id"> </el-input> -->
       <el-select v-model="form.category_name"  placeholder="请选择">
             <el-option
@@ -14,13 +14,13 @@
             </el-option>
         </el-select>
     </el-form-item>
-    <el-form-item label="小类别名称">
+    <el-form-item label="具体疾病名称">
       <el-input v-model="form.publish_name" autocomplete="off" prop="publish_name"> </el-input>
     </el-form-item>
-    <el-form-item label="小类别简称">
+    <el-form-item label="具体疾病简称">
       <el-input v-model="form.publish_short_name" autocomplete="off" prop="publish_short_name"> </el-input>
     </el-form-item>
-    <el-form-item label="publish_partition">
+    <!-- <el-form-item label="publish_partition">
       <el-input v-model="form.publish_partition" autocomplete="off" prop="publish_partition"> </el-input>
     </el-form-item>
     <el-form-item label="小类别描述">
@@ -31,7 +31,7 @@
    </el-form-item >
    <el-form-item label="小类别页数">
       <el-input v-model="form.publish_pages" prop="publish_pages"></el-input>
-   </el-form-item >
+   </el-form-item > -->
    <el-form-item label="是否私有" prop="isprivate"  v-show="show_private">
           <el-switch v-model="form.is_private" active-value= 1
             inactive-value= 0>
@@ -84,10 +84,10 @@ export default {
       formdata.append('category_name', this.form.category_name)
       formdata.append('publish_name', this.form.publish_name)
       formdata.append('publish_short_name', this.form.publish_short_name)
-      formdata.append('publish_partition', this.form.publish_partition)
-      formdata.append('publish_des', this.form.publish_des)
-      formdata.append('publish_language', this.form.publish_language)
-      formdata.append('publish_pages', this.form.publish_pages)
+      formdata.append('publish_partition', '123')
+      formdata.append('publish_des', '123')
+      formdata.append('publish_language', '中文')
+      formdata.append('publish_pages', 10)
       formdata.append('publish_home_page', 1)
       formdata.append('publish_template_link', '123')
       formdata.append('publish_community_link', '123')
