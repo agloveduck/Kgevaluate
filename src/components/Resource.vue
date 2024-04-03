@@ -8,7 +8,7 @@
           <h3 class="pass" v-if="version>='1.0'">已审阅通过</h3>
           <h3 class="pass" v-if="version<'1.0'">{{review_result}}</h3>
           </el-tab-pane>
-           <el-tab-pane label="资源摘要">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{abstract}}</el-tab-pane>
+           <el-tab-pane label="资源简介">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{abstract}}</el-tab-pane>
            <el-tab-pane label="资源详情">
             <Showpdf :academic_id=academic_id :flag=0 :filename=name></Showpdf>
            </el-tab-pane>
@@ -17,6 +17,10 @@
               <Showpdf :academic_id=item.academic_id :flag=1 :filename=name :num=item.vers></Showpdf>
             </div>
            </el-tab-pane>
+           <!-- New tab pane for displaying an image -->
+           <el-tab-pane label="资源查看">
+                <img src="../assets/triples.png" alt="Resource Image" style="width: 100%; height: auto;">
+            </el-tab-pane>
        </el-tabs>
         <div class="con">
           <h2>
@@ -100,7 +104,7 @@ export default {
   }
   .resource{
     border: 0.125rem solid #409EFF; /* 2px */
-    width: 800px; /* 800px */
+    width: 900px; /* 800px */
     height: 300px; /* 300px */
     margin: 2rem 0;
     display: flex;
@@ -120,7 +124,7 @@ export default {
 
 .con{
     /* border: 0.0625rem solid rgb(224, 200, 232); */
-    width: 200px; /* 200px */
+    width: 270px; /* 200px */
     height: 300px; /* 300px */
     /*实现垂直居中*/
     align-items: center;

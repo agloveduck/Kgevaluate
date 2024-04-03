@@ -46,7 +46,8 @@ export default {
         console.log(error)
       })
     },
-    download () {
+
+    download () { // 下载csv格式文件
       var formdata = new FormData()
       formdata.append('academic_id', this.academic_id)
       // 发送axios请求
@@ -58,7 +59,7 @@ export default {
         let href = window.URL.createObjectURL(blob) // 创建下载的链接
         downloadElement.href = href
         // var fileNameCode = res.headers['content-disposition'].split(';')[1].split('filename=')[1] + '.pdf'
-        var fileNameCode = this.filename + '.pdf'
+        var fileNameCode = this.filename + '.csv'
         // alert('文件名:' + fileNameCode)
         downloadElement.download =
         decodeURI(
