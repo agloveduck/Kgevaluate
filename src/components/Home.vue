@@ -184,8 +184,8 @@ export default {
     this.findall()
     // 默认情况下加载第一个
     var formdata = new FormData()
-    formdata.append('publish_category', 'ACM会议')
-    formdata.append('magazine', 'KDD')
+    formdata.append('publish_category', '肿瘤')
+    formdata.append('magazine', '肺癌')
     formdata.append('user_id', this.user_id)
     this.$http.post('/api/myacademic', formdata).then((res) => {
       console.log('lllllll:' + res.data)

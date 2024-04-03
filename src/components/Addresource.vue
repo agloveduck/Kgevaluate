@@ -1,10 +1,10 @@
 <template>
     <div>
       <el-button type="text" @click="dialogFormVisible = true">上传资源</el-button>
-<el-dialog title="资源上传" :visible.sync="dialogFormVisible">
+<el-dialog title="三元组资源上传" :visible.sync="dialogFormVisible">
     <el-form :model="form" ref="form" :style="{ 'max-width': '800px' }">
-        <el-form-item label="大类别名称" prop="publish_category">
-            <el-select v-model="form.publish_category" placeholder="请选择大类别">
+        <el-form-item label="疾病分类名称" prop="publish_category">
+            <el-select v-model="form.publish_category" placeholder="请选择疾病类别">
                <el-option
               v-for="item in categories"
               :key="item.title"
@@ -13,8 +13,8 @@
             </el-option>
             </el-select>
         </el-form-item>
-        <el-form-item label="小类别名称" prop="magazine">
-            <el-select v-model="form.magazine" placeholder="请选择小类别">
+        <el-form-item label="具体疾病名称" prop="magazine">
+            <el-select v-model="form.magazine" placeholder="请选择具体疾病">
               <el-option
               v-for="item in filteredCategories"
               :key="item"
@@ -23,10 +23,10 @@
             </el-option>
             </el-select>
         </el-form-item>
-        <el-form-item label="资源摘要" prop="abstract">
+        <el-form-item label="资源描述" prop="abstract">
           <el-input type="textarea" v-model="form.abstract" :style="{width: '600px'}" :rows="5"></el-input>
         </el-form-item>
-       <el-form-item label="作者名字"  prop="authorname">
+       <el-form-item label="上传者"  prop="authorname">
           <!-- <el-input v-model="form.authorname" autocomplete="off" prop="authorname"> </el-input> -->
           <el-select v-model="form.authorname"  placeholder="请选择">
             <el-option
@@ -37,10 +37,10 @@
             </el-option>
         </el-select>
        </el-form-item>
-       <el-form-item label="关键词" prop="keywords">
+       <!-- <el-form-item label="关键词" prop="keywords">
           <el-input v-model="form.keywords" autocomplete="off"  style="width: 600px"> </el-input>
-       </el-form-item>
-       <el-form-item label="评阅者姓名" prop="reviewer">
+       </el-form-item> -->
+       <el-form-item label="审核者" prop="reviewer">
         <el-select v-model="form.reviewer" multiple placeholder="请选择">
             <el-option
               v-for="item in options"
@@ -63,12 +63,12 @@
     :before-upload="beforeAvatarUpload"
     ref="uploadPdf"
     :http-request="uploadFile"
-    accept=".pdf"
+    accept=".pdf,.csv"
     >
     <i class="el-icon-upload"></i>
     <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
     <!-- <el-button type="primary">导入文件</el-button> -->
-    <div class="el-upload__tip" slot="tip">请上传不超过500M的PDF文件</div>
+    <div class="el-upload__tip" slot="tip">请上传您的文件</div>
     </el-upload>
   </div>
   <div slot="footer" class="dialog-footer">
@@ -138,7 +138,7 @@ export default {
     },
     addclick () {
       this.$refs.uploadPdf.submit()
-      console.log('作者:' + this.form.authorname)
+      console.log('上传者:' + this.form.authorname)
       // 携带文件必须使用此对象
       const formDatas = new FormData()
       if (this.isLt2M) {
@@ -149,7 +149,7 @@ export default {
         formDatas.append('magazine', this.form.magazine)
         formDatas.append('abstract', this.form.abstract)
         formDatas.append('authors', this.form.authorname)
-        formDatas.append('keywords', this.form.keywords)
+        formDatas.append('keywords', '三元组')
         formDatas.append('reviewer', reviewer)
         // 发送axios请求
         console.log(reviewer + '-------' + this.form.authorname)
@@ -165,7 +165,7 @@ export default {
         const formDatas2 = new FormData()
         // append方法逐个添加键值对
         formDatas2.append('receivers', reviewer) // 把文件实体添加到表单对象
-        formDatas2.append('filename', '【学术在线】-' + this.file.name)
+        formDatas2.append('filename', '【图谱质量评估系统】-' + this.file.name)
         formDatas2.append('author', this.form.authorname)
         // 发送邮箱
         this.$http.post('/api/sendmail', formDatas2).then((res) => {
